@@ -9,6 +9,10 @@ namespace CourseApp.Controllers
 {
     public class CourseController:Controller
     {
+        public ActionResult Details(int id)
+        {
+            return Content("id = " + id);
+        }
         
 
         //action method
