@@ -1,0 +1,49 @@
+﻿@using CourseApp.Models
+@model Student
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Apply</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/stil.css">
+</head>
+<body>
+
+    <div class="container m-4">
+        <div class="caret mx-auto" style="width:500px;">
+            <div class="card-header">
+               Başvuru Formu
+            </div>
+            <div class="card-body">
+                <form asp-action="apply" method="POST">
+                    <div asp-validation-summary="All"></div>
+                    <div class="form-group">
+                        <label asp-for="Name">Adınız</label>
+                        <input asp-for="Name" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Email">Eposta</label>
+                        <input asp-for="Email" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Phone">Telefon</label>
+                        <input asp-for="Phone" class="form-control" />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Confirm">Kursa katılacak mısınız ?</label>
+                        <select asp-for="Confirm" class="form-control">
+                            <option value="">Seçiniz</option>
+                            <option value="true">Evet, geliyorum.</option>
+                            <option value="false">Hayır, gelmiyorum</option>
+                        </select>
+                        <br />
+                    </div>
+                    <input type="submit" value="Submit" class="btn btn-primary btn-block" />
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>
