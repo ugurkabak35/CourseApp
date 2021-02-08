@@ -9,6 +9,11 @@ namespace CourseApp.Controllers
 {
     public class CourseController:Controller
     {
+        public ActionResult ByReleased(int year, int month)
+        {
+            return Content("year : " + year + " month : " + month);
+        }
+
         //Course/Details/2 : route
         // Course/Details?id=2
         public ActionResult Details(int courseid, string sortby)

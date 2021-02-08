@@ -57,6 +57,13 @@ namespace CourseApp
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
+                    "CoursesByReleased",
+                    "courses/released/{year}/{month}",
+                    new {controller = "Course", action="ByReleased" },
+                    new { year = @"\d{4}", month= @"\d{2}" }
+                    );
+
+                routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
